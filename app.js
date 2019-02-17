@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
-
+let messagesID=0;
+let connectedUsers=0;
 
 //set the template engine ejs
 app.set('view engine' , 'ejs')
@@ -19,8 +20,7 @@ app.get('/',(req,res)=>{
 const io= require("socket.io")(app.listen(3000))
 
 io.on('connection',(socket)=>{
-    let messagesID=0;
-    let connectedUsers=0;
+    
     
     
    
